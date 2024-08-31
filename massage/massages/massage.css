@@ -1,0 +1,51 @@
+body {
+    background-color: white;
+}
+
+.services {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    margin-top: 20px;
+}
+
+img {
+    width: 20%;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    img {
+        width: 100%;
+    }
+    
+    .droite {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mass {
+        grid-template-columns: repeat(1, 1fr);
+        display: block;
+    }
+
+    .droite p {
+        margin-left: -5% !important;
+        font-size: 18px;
+    }
+}
+
+.droite {
+    display: flex;
+}
+
+.droite p {
+    margin-left: 5% !important;
+    font-size: 18px;
+}
+
+/* .mass {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+} */

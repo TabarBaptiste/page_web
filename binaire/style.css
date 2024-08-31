@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(4, 54, 74);
+    color: rgb(218, 255, 251);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    background-color: rgb(23, 107, 135);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input, select {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgb(100, 204, 197);
+    color: rgb(4, 54, 74);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(4, 54, 74);
+    color: rgb(100, 204, 197);
+}
+
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}

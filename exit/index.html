@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur d'Heures de Travail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="horloge"></div>
+        <h1>Calculateur d'Heures de Travail</h1>
+        <form id="workTimeForm">
+            <label for="startTime">Heure d'arrivée :</label>
+            <input type="time" id="startTime" required>
+            
+            <label for="lunchStartTime">Heure de début de la pause déjeuner :</label>
+            <input type="time" id="lunchStartTime" required>
+            
+            <label for="lunchEndTime">Heure de fin de la pause déjeuner :</label>
+            <input type="time" id="lunchEndTime" required>
+            
+            <button type="button" onclick="calculateEndTime()">Calculer l'heure de départ</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte à rebours avant la fin de l'année</title>
+    <style>
+        body {
+            font-family: 'Segoe Script', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #compteRebours {
+            font-size: 1.5em;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 80%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .progress {
+            width: 0;
+            height: 35px;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Compte à rebours jusqu'à la fin de l'année</h1>
+    <div id="compteRebours"></div>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+        <div class="progress-text" id="progressText"></div>
+    </div>
+
+    <script>
+        function mettreAJourCompteRebours() {
+            // Date actuelle
+            var aujourdHui = new Date();
+
+            // Date de la fin de l'année actuelle
+            var finAnnee = new Date(aujourdHui.getFullYear(), 11, 31);
+
+            // Calcul du temps restant en millisecondes
+            var tempsRestant = finAnnee - aujourdHui;
+
+            // Calcul des jours, heures, minutes et secondes restants
+            var jours = Math.floor(tempsRestant / (1000 * 60 * 60 * 24));
+            var heures = Math.floor((tempsRestant % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((tempsRestant % (1000 * 60 * 60)) / (1000 * 60));
+            var secondes = Math.floor((tempsRestant % (1000 * 60)) / 1000);
+
+            // Affichage du compte à rebours
+            document.getElementById("compteRebours").innerHTML = jours + " jours, " + heures + "h " + minutes + "min " + secondes + "s";
+
+            // Calcul du pourcentage de temps écoulé
+            var pourcentage = (1 - (tempsRestant / (1000 * 60 * 60 * 24 * 365))) * 100;
+            // Mettre à jour la barre de progression
+            document.getElementById("progress").style.width = pourcentage + "%";
+            // Mettre à jour le texte du pourcentage
+            document.getElementById("progressText").innerText = Math.round(pourcentage) + "%";
+        }
+
+        // Mettre à jour le compte à rebours toutes les secondes
+        setInterval(mettreAJourCompteRebours, 900);
+    </script>
+</body>
+
+</html>
