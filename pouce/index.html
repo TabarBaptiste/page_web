@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
             height: 100vh;
             margin: 0;
         }
+
         .container {
             background-color: #fff;
             padding: 20px;
@@ -22,14 +24,17 @@
             width: 100%;
             max-width: 600px;
         }
+
         h2 {
             text-align: center;
         }
+
         label {
             font-weight: bold;
             display: block;
             margin-bottom: 5px;
         }
+
         input {
             width: 98%;
             padding: 10px;
@@ -37,6 +42,13 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
+        select {
+            padding: 4px;
+            border-radius: 5px;
+            background: rgb(0 0 0 / 10%);
+        }
+
         button {
             width: 100%;
             padding: 10px;
@@ -47,25 +59,29 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         .result {
             text-align: center;
             margin-top: 20px;
             font-size: 18px;
             color: #333;
         }
+
         .hidden {
             display: none;
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <h2>Convertisseur de dimensions TV</h2>
-        
+
         <label for="conversionType">Choisissez le type de conversion :</label>
         <select id="conversionType" onchange="toggleConversion()">
             <option value="inToCm">Pouces &#8594; Centimètres</option>
@@ -74,7 +90,8 @@
 
         <div id="inToCm" class="conversion-form">
             <label for="diagonal">Diagonale en pouces :</label>
-            <input type="number" id="diagonal" placeholder="Entrez la diagonale en pouces" min="0" oninput="convertToCm()">
+            <input type="number" id="diagonal" placeholder="Entrez la diagonale en pouces" min="0"
+                oninput="convertToCm()">
         </div>
 
         <div id="cmToIn" class="conversion-form hidden">
@@ -102,7 +119,7 @@
             const conversionFactor = 2.54; // 1 pouce = 2.54 cm
 
             if (diagonalInches) {
-                const diagonalRatio = Math.sqrt(ratioWidth**2 + ratioHeight**2);
+                const diagonalRatio = Math.sqrt(ratioWidth ** 2 + ratioHeight ** 2);
                 const heightInches = (diagonalInches * ratioHeight) / diagonalRatio;
                 const widthInches = (diagonalInches * ratioWidth) / diagonalRatio;
 
@@ -110,7 +127,7 @@
                 const widthCm = widthInches * conversionFactor;
                 const diagonalCm = diagonalInches * conversionFactor;
 
-                document.getElementById('result').textContent = 
+                document.getElementById('result').textContent =
                     `Diagonale : ${diagonalCm.toFixed(2)} cm | Largeur : ${widthCm.toFixed(2)} cm | Hauteur : ${heightCm.toFixed(2)} cm`;
             } else {
                 document.getElementById('result').textContent = "Veuillez entrer une valeur valide pour la diagonale.";
@@ -124,9 +141,9 @@
             if (heightCm && widthCm) {
                 const heightInches = heightCm * 0.393701;
                 const widthInches = widthCm * 0.393701;
-                const diagonalInches = Math.sqrt(heightInches**2 + widthInches**2).toFixed(2);
+                const diagonalInches = Math.sqrt(heightInches ** 2 + widthInches ** 2).toFixed(2);
 
-                document.getElementById('result').textContent = 
+                document.getElementById('result').textContent =
                     `Hauteur : ${heightInches.toFixed(2)} pouces | Largeur : ${widthInches.toFixed(2)} pouces | Diagonale : ${diagonalInches} pouces`;
             } else {
                 document.getElementById('result').textContent = "Veuillez entrer des valeurs valides.";
@@ -135,4 +152,5 @@
     </script>
 
 </body>
+
 </html>
