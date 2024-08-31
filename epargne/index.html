@@ -23,16 +23,15 @@
             <label for="duree-epargne">Durée de l'épargne (en années) :</label>
             <input type="number" id="duree-epargne" name="duree-epargne" step="1" required>
 
-            <div class="but">
+            <!-- <div class="but">
                 <button type="button" id="calculer-epargne">Calculer l'épargne</button>
-            </div>
+            </div> -->
         </form>
 
         <div id="resultat-epargne"></div>
 
         <script>// Fonction pour calculer l'épargne
-            document.getElementById("calculer-epargne").addEventListener("click", function () {
-
+            function recalculerEpargne() {
                 // Récupération des valeurs des champs de formulaire
                 const versementInitial = parseFloat(document.getElementById("versement-initial").value) || 0;
                 const versementMensuel = parseFloat(document.getElementById("versement-mensuel").value);
@@ -151,7 +150,13 @@
                     new Chart(ctx2, config2);
 
                 }
-            });
+            };
+
+            // Ajouter les écouteurs d'événements aux champs de saisie
+            document.getElementById("versement-initial").addEventListener("input", recalculerEpargne);
+            document.getElementById("versement-mensuel").addEventListener("input", recalculerEpargne);
+            document.getElementById("duree-epargne").addEventListener("input", recalculerEpargne);
+
         </script>
     </div>
 
