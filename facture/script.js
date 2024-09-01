@@ -4,7 +4,7 @@ function calculateShare() {
     const billAmount = parseFloat(document.getElementById('billAmount').value);
 
     if (isNaN(salary1) || isNaN(salary2) || isNaN(billAmount)) {
-        alert('Veuillez entrer des valeurs valides.');
+        document.getElementById('result').innerHTML = 'Veuillez entrer des valeurs valides.';
         return;
     }
 
@@ -23,3 +23,8 @@ function calculateShare() {
         <p>Part du Salaire 2: <strong>${share2} €</strong> (${percentage2}%)</p>
     `;
 }
+
+// Ajoutez des écouteurs d'événements pour déclencher le calcul automatiquement
+document.getElementById('salary1').addEventListener('input', calculateShare);
+document.getElementById('salary2').addEventListener('input', calculateShare);
+document.getElementById('billAmount').addEventListener('input', calculateShare);
