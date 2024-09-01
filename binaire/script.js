@@ -15,3 +15,7 @@ function convertNumber() {
 
     document.getElementById("result").textContent = result;
 }
+
+// Ajoutez des écouteurs d'événements pour déclencher la conversion automatiquement
+document.getElementById('number').addEventListener('input', convertNumber);
+document.getElementById('conversionType').addEventListener('change', convertNumber);
