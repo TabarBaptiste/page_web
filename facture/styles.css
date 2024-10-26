@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,17 +10,21 @@ body {
 
 .container {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+    margin: -10vh 2vh 0 2vh;
 }
 
 h2 {
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 25px;
+    color: #004085;
     text-align: center;
+    font-size: 1.5em;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
 }
 
 form {
@@ -29,39 +33,68 @@ form {
 }
 
 label {
-    margin-bottom: 5px;
-    color: #555;
+    margin-bottom: 8px;
+    color: #495057;
+    font-weight: 600;
 }
 
 input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    transition: border-color 0.3s;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    font-size: 1em;
+    transition: transform 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
     border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
     outline: none;
+    transform: scale(1.05);
 }
 
-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
+input:hover {
+    border-color: #6c757d;
 }
 
 #result {
     margin-top: 20px;
-    font-size: 1.2em;
-    color: #333;
+    font-size: 1.3em;
+    color: #343a40;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#result p {
+    margin: 0;
+}
+/* Ajout des styles pour les boutons */
+.btn {
+    display: none; /* Cachés par défaut */
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.98);
 }
